@@ -19,13 +19,13 @@ privacyLinks.forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
         document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-        privacyModal.classList.remove('hidden');
+        privacyModal.classList.add('visible');
     });
 });
 
 closeModal.addEventListener('click', function() {
     document.body.style.overflow = ''; // Re-enable scrolling
-    privacyModal.classList.add('hidden');
+    privacyModal.classList.remove('visible');
 });
 
 window.addEventListener('click', function(e) {
