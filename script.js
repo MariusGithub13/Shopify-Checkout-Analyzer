@@ -14,28 +14,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const privacyModal = document.getElementById('privacyModal');
     const closeModal = document.querySelector('.close');
     
-    // Modal handlers
-    privacyLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            privacyModal.classList.remove('hidden');
-        });
-    });
-    
-    termsLink.addEventListener('click', function(e) {
+// Modal handlers
+privacyLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
         e.preventDefault();
-        alert('Terms of service would be displayed here.');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        privacyModal.classList.remove('hidden');
     });
-    
-    closeModal.addEventListener('click', function() {
+});
+
+closeModal.addEventListener('click', function() {
+    document.body.style.overflow = ''; // Re-enable scrolling
+    privacyModal.classList.add('hidden');
+});
+
+window.addEventListener('click', function(e) {
+    if (e.target === privacyModal) {
+        document.body.style.overflow = ''; // Re-enable scrolling
         privacyModal.classList.add('hidden');
-    });
-    
-    window.addEventListener('click', function(e) {
-        if (e.target === privacyModal) {
-            privacyModal.classList.add('hidden');
-        }
-    });
+    }
+});
     
     // Analyze button handler
     analyzeBtn.addEventListener('click', function() {
