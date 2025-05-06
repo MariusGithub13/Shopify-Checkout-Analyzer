@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free tool to analyze your Shopify checkout for email marketing optimization opportunities">
+    <title>Shopify Checkout Analyzer | Klaviyo Experts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Shopify Checkout Marketing Analyzer</h1>
+            <p class="subtitle">Discover hidden revenue opportunities in your checkout flow</p>
+        </header>
+
+        <main>
+            <div class="analyzer-box">
+                <div class="input-section">
+                    <p>Enter your Shopify store URL to analyze checkout marketing performance:</p>
+                    <input type="url" id="storeUrl" placeholder="https://yourstore.myshopify.com" required>
+                    <button id="analyzeBtn">Analyze Checkout</button>
+                    <p class="disclaimer">We'll simulate a visitor journey to identify marketing optimization opportunities.</p>
+                </div>
+
+                <div id="results" class="hidden">
+                    <h2>Checkout Marketing Analysis</h2>
+                    <div id="findings"></div>
+                    
+                    <div class="cta-box">
+                        <h3>Want to implement these improvements?</h3>
+                        <p>Our Klaviyo-certified team can help you optimize your checkout flow for maximum conversions.</p>
+                        
+                        <form id="contactForm">
+                            <input type="email" id="userEmail" placeholder="Your email" required>
+                            <input type="hidden" id="storeUrlHidden" name="storeUrl">
+                            <button type="submit">Get Free Consultation</button>
+                        </form>
+                        <p class="privacy">We respect your privacy. By submitting, you agree to our <a href="#" id="privacyLink">Privacy Policy</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h2>Why Analyze Your Checkout Flow?</h2>
+                <div class="benefits">
+                    <div class="benefit">
+                        <h3>Recover Abandoned Carts</h3>
+                        <p>Proper checkout integration can recover 10-15% of abandoned carts through automated email/SMS flows.</p>
+                    </div>
+                    <div class="benefit">
+                        <h3>Grow Your List</h3>
+                        <p>Optimized signup forms can increase your email list growth by 3-5x compared to basic checkout.</p>
+                    </div>
+                    <div class="benefit">
+                        <h3>Increase LTV</h3>
+                        <p>Well-nurtured checkout subscribers have 30% higher lifetime value than standard customers.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© <span id="year"></span> Klaviyo Email Marketing Experts. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" id="privacyLinkFooter">Privacy Policy</a>
+                <a href="#" id="termsLink">Terms of Service</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div id="privacyModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p>We collect store URLs for analysis purposes and email addresses only if you request a consultation. We do not store or process any customer data from your Shopify store.</p>
+            <p>All data is processed in accordance with GDPR requirements. You may request deletion of your information at any time by contacting us.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
