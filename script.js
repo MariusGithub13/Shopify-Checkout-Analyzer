@@ -14,26 +14,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const privacyModal = document.getElementById('privacyModal');
     const closeModal = document.querySelector('.close');
     
-// Modal handlers
-privacyLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-        privacyModal.classList.add('visible');
+    // Modal handlers
+    privacyLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.body.style.overflow = 'hidden';
+            privacyModal.classList.add('visible');
+        });
     });
-});
-
-closeModal.addEventListener('click', function() {
-    document.body.style.overflow = ''; // Re-enable scrolling
-    privacyModal.classList.remove('visible');
-});
-
-window.addEventListener('click', function(e) {
-    if (e.target === privacyModal) {
-        document.body.style.overflow = ''; // Re-enable scrolling
-        privacyModal.classList.add('hidden');
-    }
-});
+    
+    termsLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('Terms of service would be displayed here.');
+    });
+    
+    closeModal.addEventListener('click', function() {
+        document.body.style.overflow = '';
+        privacyModal.classList.remove('visible');
+    });
+    
+    window.addEventListener('click', function(e) {
+        if (e.target === privacyModal) {
+            document.body.style.overflow = '';
+            privacyModal.classList.remove('visible');
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && privacyModal.classList.contains('visible')) {
+            document.body.style.overflow = '';
+            privacyModal.classList.remove('visible');
+        }
+    });
     
     // Analyze button handler
     analyzeBtn.addEventListener('click', function() {
